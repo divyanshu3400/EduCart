@@ -1,0 +1,241 @@
+{% extends 'EduCartApp/base.html' %}
+{% load static %}
+{% block title %}EduCart/Order summary{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/Address.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+{% endblock %}
+{% block content %}
+
+<body class="u-body u-white u-xl-mode">
+  <section class="u-clearfix u-section-1">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-checkout u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-checkout-1">
+        <div class="u-checkout-blocks-container">
+          <div class="u-checkout-billing-details-block u-checkout-block u-indent-30">
+            <div id="shipping-info" class="u-checkout-block-container u-clearfix">
+              <h5 class="u-checkout-block-header u-text" >Billings Details</h5>
+
+
+              <form id="form" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
+                style="padding: 15px;">
+                <div class="u-form-group u-form-name u-form-partition-factor-2">
+                  <label for="name-85d1" class="u-label">Name</label>
+                  <input type="text" placeholder="Enter your Name" id="name-85d1" name="name"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-1"
+                    required="">
+                </div>
+                <div class="u-form-group u-form-partition-factor-2">
+                  <label for="email-85d1" class="u-label">Email</label>
+                  <input type="text" placeholder="Enter a valid email address" id="email-85d1" name="email"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-2"
+                    required="required">
+                </div>
+                <div class="u-form-group u-form-name u-form-partition-factor-2">
+                  <h6>Shipping Address ...</h6>
+                </div>
+                <div class="u-form-group u-form-name u-form-partition-factor-2"></div>
+
+                <div class="u-form-address u-form-group u-form-partition-factor-2 u-form-group-3">
+                  <label for="address" class="u-label">Address</label>
+                  <input type="text" placeholder="Address..." id="address" name="address"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-3"
+                    required="">
+                </div>
+                <div class="u-form-group u-form-partition-factor-2 u-form-group-4">
+                  <label for="text" class="u-label">City</label>
+                  <input type="text" placeholder="City..." id="text" name="city"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-4"
+                    required="required">
+                </div>
+                <div class="u-form-group u-form-partition-factor-2 u-form-group-5">
+                  <label for="text" class="u-label">State</label>
+                  <input type="text" placeholder="State..." id="text" name="state"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-5"
+                    required="required">
+                </div>
+                <div class="u-form-group u-form-partition-factor-2 u-form-group-6">
+                  <label for="text" class="u-label">Country</label>
+                  <input type="text" placeholder="Country..." id="text" name="country"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-6"
+                    required autofocus>
+                </div>
+                <div class="u-form-group u-form-group-7">
+                  <label for="text-e519" class="u-label">Postal Code</label>
+                  <input type="text" placeholder="Postal Code..." id="text-e519" name="postalcode"
+                    class="u-border-1 u-border-grey-50 u-grey-5 u-input u-input-rectangle u-radius-5 u-input-7"
+                    required="required" autofocus="autofocus">
+                </div>
+                <div  class="u-align-left">
+                  <input id="form-button" class="u-active-custom-color-1 u-border-none u-btn u-btn-submit u-button-style u-hover-palette-1-light-2 u-btn-1" type="submit" value="Continue">
+                </div>
+              </form>
+
+            </div>
+            <div style="margin:40px ;" id="payment-info" class="hidden u-checkout-block-container u-clearfix">
+              <small>Paypal Option</small>
+            <button id="do_payment">Make Payment</button>
+            </div>
+          </div>
+          
+
+          <div class="u-checkout-block u-checkout-totals-block u-indent-30">
+            <div class="u-checkout-block-container u-clearfix">
+
+              <div class="u-align-right u-form-group u-form-submit">
+                <a href="{% url 'mycart' %}" class="u-btn u-btn-submit u-button-style u-btn-1">&#x2190; Back to Cart</a>
+                <input type="submit" value="submit" class="u-form-control-hidden">
+              </div>
+              <h5 class="u-checkout-block-header u-text">Your Order Summary</h5>
+              <div class="u-align-right u-checkout-block-content u-text">
+                <div class="u-checkout-totals-table u-table u-table-responsive">
+                  <table class="u-table-entity">
+                    <colgroup>
+                      <col width="50%">
+                      <col width="50%">
+                    </colgroup>
+                    <tbody class="u-align-right u-table-body">
+                      <tr style="height: 46px;">
+                        <td
+                          class="u-align-left u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-1">
+                          Items:</td>
+                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{order.get_cart_items}}</td>
+                      </tr>
+                      <tr style="height: 46px;">
+                        <td
+                          class="u-align-left u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-3">
+                          Total</td>
+                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-4">
+                          &#8377;{{order.get_cart_total|floatformat:2}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="u-checkout-placeorder-form u-form">
+                  <form method="POST" class="u-clearfix u-form-spacing-6 u-form-vertical u-inner-form"
+                    style="padding: 10px;">
+                    <!-- <div class="u-form-group u-form-group-9 u-form-radiobutton"> -->
+                      <!--                        <div class="u-form-radio-button-wrapper">-->
+                      <!--                          <input type="radio" name="radiobutton" value="Direct bank transfer">-->
+                      <!--                          <label class="u-label" for="radiobutton">Direct bank transfer</label>-->
+                      <!--                          <br>-->
+                      <!--                          <input type="radio" name="radiobutton" value="Check payments">-->
+                      <!--                          <label class="u-label" for="radiobutton">Check payments</label>-->
+                      <!--                          <br>-->
+                      <!--                          <input type="radio" name="radiobutton" value="Cash on delivery">-->
+                      <!--                          <label class="u-label" for="radiobutton">Cash on delivery</label>-->
+                      <!--                          <br>-->
+                      <!--                        </div>-->
+                    <!-- </div> -->
+                    <div id="place-order" class="u-align-right u-form-group u-form-submit hidden">
+                      <input class="u-btn u-btn-submit u-button-style u-btn-1" type="submit" value="place Order">
+                    </div>
+                  
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total}}'
+    var paymentBtn = document.getElementById('do_payment')
+    if (shipping == 'False') {
+
+      document.getElementById('payment-info').classList.remove('hidden');
+      document.getElementById('shipping-info').innerHTML = ''
+      paymentBtn.addEventListener('click', function(e)
+      {
+        submitFormData();
+      })
+
+
+    }
+    // if (user != 'AnonymousUser')
+    // {
+    //   document.getElementById('user-info').innerHTML=''
+    // }
+
+    // if(shipping =='False' && user != 'AnonymousUser')
+    // {
+    //   //hide entire form if user is logged in and shipping is false
+    //   document.getElementById('form-wrapper').classList.add('hidden');
+
+    //   // show payment if logged in user wants to buy an item that does not require shipping
+    //   document.getElementById('payment-info').classList.remove('hidden');
+    //   document.getElementById('place-order').classList.remove('hidden')
+      
+    // }
+
+    var user_address_form = document.getElementById('form')
+    user_address_form.addEventListener('submit', function (e) {
+      e.preventDefault()
+      console.log('Form submitted...')
+      document.getElementById('form-button').classList.add('hidden')
+      document.getElementById('payment-info').classList.remove('hidden')
+    })
+
+    
+      paymentBtn.addEventListener('click', function(e)
+      {
+        submitFormData();
+      })
+
+      function submitFormData()
+      {
+        console.log('payment Button clicked....')
+        var userFormData = {
+
+          'name': null,
+          'email': null,
+          'total': total,
+        }
+        var shippingInfo ={
+
+          'address': null,
+          'city': null,
+          'state': null,
+          'postalcode': null,
+          'country': null,
+
+
+       }
+
+       if(shipping != 'False')
+       {
+        shippingInfo.address = form.address.value
+        shippingInfo.city = form.city.value
+        shippingInfo.state = form.state.value
+        shippingInfo.postalcode = form.postalcode.value
+        shippingInfo.country = form.country.value
+
+
+       }
+
+       var url = '/process_order/'
+       fetch(url,{
+        method:'POST',
+        headers:{
+          'content-type':'application/json',
+          'X-CSRFToken': csrftoken,
+        },
+        body:JSON.stringify({'form':userFormData, 'shipping': shippingInfo})
+       })
+       .then((response)=> response.json())
+       .then((data) => {
+
+        console.log('Success', data);
+        alert('Transaction completed')
+        window.location.href="{% url 'productlist' %}"
+       })
+        document.getElementById('place-order').classList.remove('hidden')
+
+      }
+    
+  </script>
+
+  {% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'EduCartApp/base.html' %}
+{% load static %}
+{% block title %}EduCart/Login{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/Login.css' %}" media="screen">{% endblock %}
+{% block content %}
+ <section class="u-clearfix u-section-1" id="sec-b6e4">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-border-2 u-border-palette-1-base u-form u-login-control u-radius-13 u-form-1">
+
+            {% for msg in messages %}
+                <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                  <strong>Message:</strong> &nbsp; {{msg}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                  <span aria-hidden="false">&times;</span>
+                  </button>
+                </div>
+             {% endfor %}
+
+          <form action="" method="POST">
+                        {% csrf_token %}
+                        <p>
+                            <label for="username">Username<span>*</span></label>
+                            <input type="text" id="username" name="username" placeholder="example1234" class="u-border-grey-30 u-input u-input-rectangle u-input-1" required>
+                        </p>
+                        <p>
+                            <label for="password">Password<span>*</span></label>
+                            <input type="password" id="password" name="password" placeholder="Password" class="u-border-grey-30 u-input u-input-rectangle u-input-1" required>
+                        </p>
+                        <div class="  u-btn-submit u-button-style u-btn-1">
+                          <input type="submit" value="Login">
+<!--                             <button type="submit"><a href="#">Submit</a></button><br><br>-->
+                        </div>
+
+                    </form>
+<!--          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-19 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 21px;">-->
+<!--            <div class="u-form-group u-form-name">-->
+<!--              <label for="username-a30d" class="u-label">Username *</label>-->
+<!--              <input type="text" placeholder="Enter Username or  Email" id="username-a30d" name="username" class="u-border-grey-30 u-input u-input-rectangle u-input-1" required="" autofocus="autofocus">-->
+<!--            </div>-->
+<!--            <div class="u-form-group u-form-password">-->
+<!--              <label for="password-a30d" class="u-label">Password *</label>-->
+<!--              <input type="text" placeholder="Enter your Password" id="password-a30d" name="password" class="u-border-grey-30 u-input u-input-rectangle u-input-2" required="">-->
+<!--            </div>-->
+<!--            <div class="u-form-checkbox u-form-group">-->
+<!--              <input type="checkbox" id="checkbox-a30d" name="remember" value="On">-->
+<!--              <label for="checkbox-a30d" class="u-label">Remember me</label>-->
+<!--            </div>-->
+<!--            <div class="u-align-left u-form-group u-form-submit">-->
+<!--              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Login</a>-->
+<!--              <input type="submit" value="submit" class="u-form-control-hidden">-->
+<!--            </div>-->
+<!--            <input type="hidden" value="" name="recaptchaResponse">-->
+<!--          </form>-->
+        </div>
+        <a href="/" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-hover-palette-1-light-2 u-text-palette-1-base u-btn-2">Forget password?</a>
+        <a href="/" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-hover-palette-1-light-2 u-text-palette-1-base u-btn-3">Don't have accountt?</a>
+      </div>
+    </section>
+
+{% endblock %}
+

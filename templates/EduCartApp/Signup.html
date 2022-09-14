@@ -1,0 +1,76 @@
+{% extends 'EduCartApp/base.html' %}
+{% load static %}
+{% block title %}EduCart/Signup{% endblock %}
+<!--{% block css %}<link rel="stylesheet" href="{% static 'css/Signup.css' %}" media="screen">{% endblock %}-->
+{% block content %}
+
+<body class="u-body u-xl-mode" data-lang="en">
+  <section class="u-clearfix u-section-1" id="sec-528e">
+
+    <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+      <div class="u-border-2 u-border-palette-1-base u-expanded-width-xs u-form u-radius-25 u-form-1">
+
+        <form action="#" method="POST">
+          {% csrf_token %}
+          <div class="user-details">
+            <div style="margin: 10px" class="input-boxu-form-group">
+              <span class="details">First Name:</span>
+              <input type="text" placeholder="Enter your first name" name="fname"
+                class="u-border-1 u-border-grey-25 u-input u-input-rectangle u-radius-30 u-text-black u-white u-input-7"
+                required>
+            </div>
+
+            <div style="margin: 10px" class="input-box">
+              <span class="details">Last Name:</span>
+              <input type="text" placeholder="Enter your second name" name="lname"
+                class="u-border-1 u-border-grey-25 u-input u-input-rectangle u-radius-30 u-text-black u-white u-input-7"
+                required>
+            </div>
+
+            <div style="margin: 10px" class="input-box">
+              <span class="details">Email</span>
+              <input type="email" placeholder="example@gmail.com" name="email"
+                class="u-border-1 u-border-grey-25 u-input u-input-rectangle u-radius-30 u-text-black u-white u-input-7"
+                required>
+            </div>
+
+            <div style="margin: 10px" class="input-box">
+              <span class="details">username</span>
+              <input type="text" placeholder="Enter your number" name="uname"
+                class="u-border-1 u-border-grey-25 u-input u-input-rectangle u-radius-30 u-text-black u-white u-input-7"
+                required>
+            </div>
+
+            <div style="margin: 10px" class="input-box">
+              <span class="details">Password</span>
+              <input type="password" placeholder="Enter your password"
+                class="u-border-1 u-border-grey-25 u-input u-input-rectangle u-radius-30 u-text-black u-white u-input-7"
+                name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
+                title="Yoyr password must contain at least one number, lowercase and upercase letter, and at least 8 character and atmost 16 character"
+                required>
+            </div>
+
+            <div style="margin: 10px" class="input-box"><span class="details">Confirm Password</span>
+              <input type="password" placeholder="Confirm your password"
+                class="u-border-1 u-border-grey-25 u-input u-input-rectangle u-radius-30 u-text-black u-white u-input-7"
+                name="conf_password" required>
+            </div>
+          </div>
+
+          <div class="u-align-center u-form-group u-form-submit u-label-top"><input type="submit" value="Signup"></div>
+        </form>
+        {% for msg in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          <strong>Message:</strong> &nbsp; {{msg}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="false">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section>
+</body>
+{% endblock %}

@@ -1,0 +1,205 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 730px;
+}
+
+.u-section-1 .u-form-1 {
+  height: 640px;
+  box-shadow: 9px 9px 17px 0px rgba(165,190,249,0.65);
+  margin: 30px 323px 60px 285px;
+}
+
+.u-section-1 .u-label-1 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-1 {
+  height: 45px;
+}
+
+.u-section-1 .u-label-2 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-2 {
+  height: 45px;
+}
+
+.u-section-1 .u-form-group-3 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-3 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-3 {
+  height: 45px;
+}
+
+.u-section-1 .u-label-4 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-4 {
+  height: 45px;
+}
+
+.u-section-1 .u-form-group-5 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-5 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-5 {
+  height: 45px;
+}
+
+.u-section-1 .u-form-group-6 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-6 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-6 {
+  height: 45px;
+}
+
+.u-section-1 .u-form-group-7 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-7 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.u-section-1 .u-input-7 {
+  height: 35px;
+}
+
+.u-section-1 .u-btn-1 {
+  width: 100%;
+  padding: 10px 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-form-1 {
+    height: 608px;
+    width: 539px;
+    margin-top: 34px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 604px;
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 510px;
+    margin-top: 37px;
+    margin-bottom: 37px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 542px;
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 542px;
+    margin-top: 39px;
+    margin-bottom: 39px;
+  }
+
+  .u-section-1 .u-label-1 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-1 {
+    height: 34px;
+  }
+
+  .u-section-1 .u-label-2 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-2 {
+    height: 34px;
+  }
+
+  .u-section-1 .u-label-3 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-3 {
+    height: 34px;
+  }
+
+  .u-section-1 .u-label-4 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-4 {
+    height: 34px;
+  }
+
+  .u-section-1 .u-label-5 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-5 {
+    height: 34px;
+  }
+
+  .u-section-1 .u-label-6 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-6 {
+    height: 34px;
+  }
+
+  .u-section-1 .u-label-7 {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .u-section-1 .u-input-7 {
+    height: 34px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 564px;
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 530px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+}

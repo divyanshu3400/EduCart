@@ -1,0 +1,286 @@
+{% extends 'EduCartApp/base.html' %}
+{% load static %}
+{% block title %}EduCart{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/Home.css' %}" media="screen">{% endblock %}
+
+{% block content %}
+
+  <body class="u-body u-xl-mode" data-lang="en">
+    <section class="u-clearfix u-section-1" id="sec-f200">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-palette-5-dark-3 u-shape u-shape-rectangle u-shape-1"></div>
+        <div class="u-palette-1-base u-shape u-shape-rectangle u-shape-2"></div>
+        <img src="{% static 'images/patrick-amoy-6DfEbkqsTiA-unsplash.jpg' %}" class="u-align-left u-image u-image-1" data-image-width="1920" data-image-height="1280">
+        <div class="u-align-center u-layout-grid u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+
+            {% for t in tutorials %}
+            <div class="u-align-center u-border-2 u-border-palette-1-base u-container-style u-hover-feature u-list-item u-radius-12 u-repeater-item u-shape-round u-white u-list-item-8" data-href="{{t.links}}">
+              <div class="u-container-layout u-similar-container u-container-layout-8">
+                <div alt="{{t.courses}}" class="u-align-center u-image u-image-circle u-image-9" data-image-width="1200" data-image-height="800"><img class="u-align-center u-image u-image-circle u-image-9" src="media/{{t.images}}"/></div>
+                <p class="u-align-center-sm u-align-center-xs u-text u-text-8">{{t.course}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+
+    </section>
+    <section class="u-clearfix u-section-2" id="carousel_53ae">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <div class="u-expanded-width-lg u-expanded-width-xl u-expanded-width-xs u-palette-1-base u-shape u-shape-rectangle u-shape-1"></div>
+        <div class="u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-container-style u-layout-cell u-left-cell u-size-26-lg u-size-26-xl u-size-27-md u-size-27-sm u-size-27-xs u-layout-cell-1">
+                    <div class="u-container-layout u-valign-top u-container-layout-1">
+                      <h2 class="u-text u-text-1">
+                        <span style="font-size: 3rem;">Learn New Technologies</span>
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-33-md u-size-33-sm u-size-33-xs u-size-34-lg u-size-34-xl u-layout-cell-2">
+                    <div class="u-container-layout u-valign-top u-container-layout-2">
+                      <p class="u-text u-text-2">Massa ultricies mi quis hendrerit. Ac ut consequat semper viverra nam. Libero id faucibus nisl tincidunt eget nullam non nisi est. Arcu odio ut sem nulla. Amet tellus cras adipiscing enim. Et magnis dis parturient montes. Imperdiet sed euismod nisi porta.</p>
+                      <a href="/" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-1-base u-radius-28 u-btn-1">learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30">
+                <div class="u-layout-row">
+                  <div class="u-container-style u-image u-layout-cell u-left-cell u-right-cell u-size-60 u-image-1" data-image-width="1800" data-image-height="1800">
+                    <div ><img class="u-container-layout u-container-layout-3" src="{% static 'images/mimi-thian-slWBjTGhREQ-unsplash.jpg' %}"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="u-align-center u-clearfix u-valign-middle-lg u-valign-middle-xl u-section-3" src="" id="carousel_0791">
+      <img class="u-image u-image-default u-image-1" src="{% static 'images/van-tay-media-pc_HmXZ0e_w-unsplash.jpg' %}" data-image-width="2400" data-image-height="1600">
+      <h2 class="u-text u-text-body-alt-color u-text-default u-text-1">Our Courses</h2>
+      <div class="u-align-center u-layout-horizontal u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+
+          {% for details in course_details %}
+          <div class="u-border-2 u-border-palette-1-base u-container-style u-list-item u-radius-17 u-repeater-item u-shape-round u-white u-list-item-7">
+            <div class="u-container-layout u-similar-container u-container-layout-7">
+              <h3 class="u-text u-text-20">{{details.title}}</h3>
+              <img class="u-align-center-md u-align-center-sm u-align-center-xs u-image u-image-default u-image-8" src="media/{{ details.courseimage }}" alt="{{details.title}}" data-image-width="1280" data-image-height="720">
+              <p class="u-custom-font u-font-arial u-text u-text-21">{{details.desc}}</p>
+              <h4 class="u-custom-font u-font-oswald u-text u-text-custom-color-1 u-text-22">Price: {{details.price}}/-</h4>
+              <a href="{% url 'home' %}" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-7">BUY</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-icon-circle u-opacity u-opacity-70 u-palette-1-base u-spacing-10 u-gallery-nav-1" href="#" role="button">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 451.847 451.847">
+              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                       c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+
+              </path>
+            </svg>
+          </span>
+          <span class="sr-only">
+<!--            <img src="{% static 'images/left1.png' %}">-->
+            <svg viewBox="0 0 451.847 451.847">
+              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                       c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                       c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+              </path>
+            </svg>
+          </span>
+        </a>
+
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-icon-circle u-opacity u-opacity-70 u-palette-1-base u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button">
+
+          <span aria-hidden="true">
+
+            <svg viewBox="0 0 451.846 451.847">
+<!--                          <img src="{% static 'images/left1.png' %}">-->
+
+              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                          L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                          c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z">
+
+              </path>
+            </svg>
+          </span>
+
+          <span class="sr-only">
+<!--            <img src="{% static 'images/right.png' %}">-->
+
+            <svg viewBox="0 0 451.846 451.847">
+              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                       L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                       c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z">
+              </path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+
+    <section class="u-align-left u-clearfix u-grey-10 u-section-4" id="carousel_77f5">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1"> Drive Your Career Forward</h2>
+        <div class="u-border-16 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+        <div class="u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-left u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <h5 class="u-text u-text-default u-text-2"> online courses</h5>
+                <div class="u-expanded-height-lg u-expanded-height-sm u-expanded-height-xl u-expanded-height-xs u-palette-1-base u-shape u-shape-rectangle u-shape-1"></div>
+                <p class="u-text u-text-3"> Article evident arrived express highest men did boy. Mistress sensible entirely am so. Quick can manor smart money hopes worth too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes.&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="u-clearfix u-section-5" id="carousel_747b">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h6 class="u-align-justify u-custom-font u-font-montserrat u-text u-text-1">OUR TEACHERS</h6>
+        <div class="u-clearfix u-expanded-width-xs u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <p class="u-align-justify u-text u-text-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                  <div  data-image-width="1080" data-image-height="1080"><img class="u-border-10 u-border-palette-1-base u-image u-image-circle u-image-1" alt="teacher_img" src="{% static 'images/fff.jpg' %}"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-grey-10 u-section-6" id="carousel_0f12">
+      <div class="u-expanded-width u-shape u-shape-rectangle u-white u-shape-1"></div>
+      <div class="u-palette-1-base u-shape u-shape-rectangle u-shape-2"></div>
+      <img src="{% static 'images/16144a0f1ad7457586198fcec406684e97869c312d3f8e8b649823d25d42f43cf53f4af40f97ddcaa2a0e2d80b9d1937bb3c12eed72437ff4a2e85_1280.jpg' %}" class="u-align-left u-image u-image-1" data-image-width="1280" data-image-height="720">
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-palette-1-base u-size-18-xl u-size-21-lg u-size-25-md u-size-25-sm u-size-25-xs u-layout-cell-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-1">
+                <h3 class="u-text u-text-1">about us</h3>
+              </div>
+            </div>
+            <div class="u-align-left u-container-style u-layout-cell u-size-35-md u-size-35-sm u-size-35-xs u-size-39-lg u-size-42-xl u-white u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <p class="u-text u-text-2">Pharetra magna ac placerat vestibulum lectus mauris ultrices. Ut pharetra sit amet aliquam id diam maecenas ultricies mi. Sollicitudin ac orci phasellus egestas tellus rutrum. Venenatis cras sed felis eget. Amet risus nullam eget felis eget nunc. Lacus vestibulum sed arcu non odio euismod. Consectetur adipiscing elit duis tristique.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="u-clearfix u-section-7" id="sec-0756">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-30">
+                <div class="u-layout-col">
+                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+                    <div class="u-container-layout u-valign-top u-container-layout-1">
+                      <h3 class="u-text u-text-default u-text-1">Location</h3>
+                      <p class="u-text u-text-grey-50 u-text-2">Dayal Residancy, Chinhut Lucknow&nbsp;<br>India
+                      </p>
+                    </div>
+                  </div>
+                  <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                    <div class="u-container-layout u-valign-middle u-container-layout-2">
+                      <h3 class="u-text u-text-default u-text-3">follow us</h3>
+                      <div class="u-social-icons u-spacing-10 u-social-icons-1">
+                        <a class="u-social-url" title="facebook" target="_blank" href="https://facebook.com/name">
+                          <span class="u-icon u-social-facebook u-social-icon u-icon-1">
+                            <img src="{% static 'images/fbicon.png' %}">
+                          </span>
+                        </a>
+                        <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/name">
+                          <span class="u-icon u-social-icon u-social-twitter u-icon-2">
+                            <img src="{% static 'images/twitter.png' %}">
+                          </span>
+                        </a>
+
+                        <a class="u-social-url" title="instagram" target="_blank" href="https://instagram.com/name">
+                          <span class="u-icon u-social-icon u-social-instagram u-icon-3">
+                            <img src="{% static 'images/instagram.png' %}">
+                          </span>
+                        </a>
+                      </div>
+                      <p class="u-text u-text-4">©2022 Privacy policy</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="u-size-30">
+                <div class="u-layout-col">
+                  <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-3">
+                    <div class="u-container-layout u-container-layout-3">
+                      <h3 class="u-text u-text-5">contact form</h3>
+                      <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+
+
+                        <form action="#" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form-2">
+                          {% csrf_token %}
+
+                          <div class="u-form-group u-form-name">
+                            <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
+                            <input type="text" placeholder="Enter your Name" id="name-da97" name="name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required>
+                          </div>
+
+                          <div class="u-form-email u-form-group">
+                            <label for="email-da97" class="u-form-control-hidden u-label">Email</label>
+                            <input type="email" placeholder="Enter a valid email address" id="email-da97" name="email" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required>
+                          </div>
+
+                          <div class="u-form-group u-form-message">
+                            <label for="message-da97" class="u-form-control-hidden u-label">Message</label>
+                            <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required></textarea>
+                          </div>
+
+                          <div class="u-form-group u-form-submit">
+                            <a href="{% url 'home' %}"  class="u-active-black u-border-none u-btn  u-button-style u-hover-white u-palette-1-base u-btn-1">Submit</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                          </div>
+<!-- 
+                          <div class=" u-form-send-success"> Thank you! Your message has been sent. </div>
+                          <div class="u-form-send-error"> Unable to send your message. Please fix errors then try again. </div>
+                          <input type="hidden" value="" name="recaptchaResponse"> -->
+
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+{% endblock %}

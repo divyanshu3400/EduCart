@@ -1,0 +1,101 @@
+{% extends 'EduCartApp/base.html' %}
+{% load static %}
+{% block title %}EduCart/Product list{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/Productlist2.css' %}" media="screen">{% endblock %}
+
+
+{% block content %}
+
+
+<section class="u-clearfix u-section-1" id="sec-66e1">
+  <div class="u-clearfix u-sheet u-valign-top-xs u-sheet-1">
+    <div class="u-expanded-width u-pagination-center u-products u-products-1">
+      <div class="u-repeater u-repeater-1">
+
+        {% for product in products %}
+        <div class="u-container-style u-palette-5-light-3 u-products-item u-repeater-item u-repeater-item-1">
+          <div class="u-container-layout u-similar-container u-container-layout-1">
+            <img src="{{product.image.url}}" alt="{{product.name}}"  class="u-expanded-width u-image u-image-default u-product-control u-image-1" >
+            <h5 class="u-align-center u-product-control u-text u-text-1">
+              <a class="u-product-title-link" href="#">{{product.name}}</a>
+            </h5>
+            <div class="u-align-left u-product-control u-product-price u-product-price-1">
+              <div class="u-price-wrapper u-spacing-10">
+                <div class="u-hide-price u-old-price">$20.00</div>
+                <div class="u-price" style="font-size: 1rem; font-weight: 700;">&#8377;{{product.price| floatformat:2}}</div>
+              </div>
+            </div>
+
+            <a href="{% url 'productlist' %}" data-product="{{product.id}}" data-action="add" class="u-active-custom-color-1 u-align-center-xs u-border-1 u-border-palette-1-light-1 u-btn u-button-style u-hover-palette-1-light-3 u-none u-product-control u-text-black u-text-hover-white u-btn-1 update-cart">Add to Cart</a>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="u-list-control">
+
+        <ul class="responsive-style1 u-pagination u-unstyled">
+          
+          <li class="disabled prev u-nav-item u-pagination-item">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">〈</a>
+          </li>
+          <li class="active u-nav-item u-pagination-item">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">1</a>
+          </li>
+          <li class="u-nav-item u-pagination-item">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">2</a>
+          </li>
+          <li class="u-nav-item u-pagination-item">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">3</a>
+          </li>
+          <li class="u-nav-item u-pagination-item u-pagination-separator">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">...</a>
+          </li>
+          <li class="u-nav-item u-pagination-item">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">8</a>
+          </li>
+          <li class="next u-nav-item u-pagination-item">
+            <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">〉</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+    <!-- <section class="u-clearfix u-section-1" id="sec-66e1">
+
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+
+        <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-products u-products-1">
+      
+          <div class="u-repeater u-repeater-1">
+
+            {% for product in products %}
+            <div class="u-align-center u-container-style u-products-item u-repeater-item u-white u-repeater-item-1">
+              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-1">
+                <img src="{{product.image.url}}" alt="{{product.name}}" class="u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-expanded-width-xs u-image u-image-default u-product-control u-image-1" >
+                <h4 class="u-product-control u-text u-text-1"><a class="u-product-title-link" href="#">{{product.name}}</a></h4>
+
+                <div class="u-product-control u-product-price u-product-price-1">
+                  <div class="u-price-wrapper u-spacing-10">
+                    <div class="u-price u-text-palette-2-base" style="font-size: 1.25rem; font-weight: 700;">&#8377;{{product.price| floatformat:2}}</div>
+                  </div>
+                </div>
+
+                <a href="" data-product="{{product.id}}" data-action="add" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-product-control u-text-palette-1-base u-btn-1 update-cart">Add to Cart></a>
+
+              </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+      </div>
+    </section> -->
+ {% endblock %}
+
+
+<!--                    <div class="u-hide-price u-old-price">${{pro.price}}</div>-->

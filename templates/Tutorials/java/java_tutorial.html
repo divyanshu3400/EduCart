@@ -1,0 +1,30 @@
+{% extends 'Tutorials/Tutorials.html' %}
+{% load static %}
+
+{% block title %}java tutorial{% endblock %}
+
+    {% block notes %}
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-small-text u-text u-text-default u-text-variant u-text-1">Sample small text. Lorem ipsum dolor sit amet.</p>
+        </div>
+          {% endblock %}
+
+      </div>
+
+      <div class="u-container-style u-grey-5 u-group u-hidden-md u-hidden-sm u-hidden-xs u-shape-rectangle u-group-2">
+        <div class="u-container-layout u-valign-top u-container-layout-2">
+          <div class="u-border-2 u-border-grey-40 u-border-no-bottom u-border-no-top u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-white u-group-3">
+            <div class="u-container-layout u-container-layout-3">
+                {% block titles %}
+              <h2 style="margin-bottom:7px" class="u-align-center u-custom-font u-subtitle u-text u-text-2">Java Tutorial</h2>
+              <div class="u-image u-image-circle u-preserve-proportions u-image-1" alt="java" data-image-width="128" data-image-height="128">
+                  <img style="margin-left:15px" height="30px" width="30px" src="{% static 'images/java.png' %}">
+              </div>
+                {% endblock %}
+                <div class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-clearfix u-custom-html u-custom-html-1"></div>
+              {% block topics %}
+                <a href="{% url 'java' %}" class="u-align-left u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-active-palette-1-base u-text-body-color u-text-hover-grey-50 u-btn-1">Java Home</a>
+                {% endblock %}
+            </div>
+          </div>
+        </div>

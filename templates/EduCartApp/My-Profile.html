@@ -1,0 +1,167 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="AI, Web development, Android develpment, software engineering">
+<!--    <meta name="description" content="">-->
+    <title>{% block title %}My Profile{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+   {% block css %}<link rel="stylesheet" href="{% static 'css/My-Profile.css' %}" media="screen">{% endblock %}
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+<!--    <script type="text/javascript" src="{% static 'js/myjs.js' %}" defer=""></script>-->
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Oswald:200,300,400,500,600,700|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i">
+
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#184ed2">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+
+  <body class="u-body u-xl-mode" data-lang="en">
+  <header class="u-align-center-xs u-clearfix u-header u-section-row-container" id="sec-1151" style="background-image: none"><div class="u-section-rows">
+        <div class="u-align-center-xs u-border-2 u-border-no-left u-border-no-right u-border-palette-1-base u-clearfix u-section-row u-sticky u-sticky-1a35 u-white u-section-row-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" id="sec-210f">
+          <div class="u-clearfix u-sheet u-sheet-1">
+            <form action="#" method="get" class="u-align-center u-border-2 u-border-no-right u-border-palette-1-base u-radius-30 u-search u-search-right u-search-1">
+              <button class="u-search-button" type="submit">
+                <span class="u-file-icon u-search-icon u-spacing-10 u-text-palette-1-base u-search-icon-1">
+                  <img src="{% static 'images/54481.png' %}" alt="">
+                </span>
+              </button>
+              <input class="u-custom-font u-font-merriweather u-search-input" type="search" name="search" value="" placeholder="Search">
+            </form>
+
+            {% block cart %}
+            <span class="u-align-right u-file-icon u-icon u-icon-1" data-href="{% url 'mycart' %}">
+              <img src="{% static 'images/891462.png' %}" alt="">
+            </span>
+            {% endblock %}
+
+            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="{% static 'images/EduCartLogo.png' %}" alt="logo" data-image-width="201" data-image-height="68" data-href="{% url 'home' %}" data-page-id="364620330">
+
+<!--        first header profile div box it will be seen if user gets logged in -->
+            {% block profile %}
+            <div class="u-container-style u-group u-shape-rectangle u-group-1" data-href="{% url 'personalinfo' %}" data-page-id="57027834">
+              <div class="u-container-layout u-container-layout-1">
+                <div  alt="img" data-image-width="1080" data-image-height="1080"><img class="u-image u-image-circle u-preserve-proportions u-image-2" src="{% static 'images/fff.jpg' %}"></div>
+                <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-1">{{user.first_name}}<span style="font-weight: 700;"></span>
+                </p>
+              </div>
+            </div>
+            {% endblock %}
+          </div>
+
+        </div>
+        <div class="u-palette-1-base u-section-row u-sticky u-section-row-2" id="sec-7824">
+          <div class="u-clearfix u-sheet u-sheet-2">
+            <nav class="u-align-left u-dropdown-icon u-menu u-menu-one-level u-nav-spacing-25 u-offcanvas u-menu-1" data-responsive-from="MD" data-submenu-level="with-reload" data-position="Home">
+              <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-file-icon u-nav-link u-text-white u-file-icon-3" href="{% url 'home' %}">
+                  <img src="{% static 'images/660376-d66f2e5d.png' %}" alt="">
+                </a>
+              </div>
+              <div class="u-custom-menu u-nav-container" wfd-invisible="true">
+                <ul class="u-custom-font u-nav u-spacing-0 u-text-font u-unstyled u-nav-1">
+                  {% if user.is_authenticated %}
+                  <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-1 u-border-hover-grey-10 u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-grey-5 u-text-white" href="{% url 'home' %}" style="padding: 8px 20px;">Home</a></li>
+                  <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-1 u-border-hover-grey-10 u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-grey-5 u-text-white" href="{% url 'mycourses' %}" style="padding: 8px 20px;">My Courses</a></li>
+                  <li class="u-nav-item"><h5 class="u-border-2  u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1  u-text-white">Welcome {{user.first_name}}| {{time.msg}} {{time.date}}</h5></li>
+                  <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-1 u-border-hover-grey-10 u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-grey-5 u-text-white" href="{% url 'logoutuser' %}" style="padding: 8px 20px;">Logout</a></li>
+
+                  {% else %}
+                  <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-1 u-border-hover-grey-10 u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-grey-5 u-text-white" href="{% url 'home' %}" style="padding: 8px 20px;">Home</a></li>
+                  <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-1 u-border-hover-grey-10 u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-grey-5 u-text-white" href="{% url 'login' %}" style="padding: 8px 20px;">Login</a></li>
+                  <li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-1 u-border-hover-grey-10 u-border-no-bottom u-border-no-left u-border-no-top u-border-white u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-grey-5 u-text-white" href="{% url 'signup' %}" style="padding: 8px 20px;">Signup</a></li>
+
+                {% endif %}
+                </ul>
+              </div>
+              <div class="u-custom-menu u-nav-container-collapse">
+                <div class="u-align-center u-border-1 u-border-palette-1-base u-container-style u-inner-container-layout u-opacity u-opacity-95 u-palette-1-light-3 u-sidenav u-sidenav-1" data-offcanvas-width="150">
+                  <div class="u-inner-container-layout u-sidenav-overflow">
+                    <div class="u-menu-close"></div>
+                    <ul class="u-align-left u-nav u-popupmenu-items u-spacing-0 u-text-active-palette-1-base u-text-black u-text-hover-grey-60 u-unstyled u-nav-2">
+
+                      {% if user.is_authenticated %}
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">Home</a></li>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'mycourses' %}">My Courses</a></li>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'logoutuser' %}">Logout</a></li>
+
+                      {% else %}
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}">Login</a></li>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'signup' %}">Signup</a></li>
+                      {% endif %}
+                    </ul>
+                  </div>
+                </div>
+                <div class="u-menu-overlay u-opacity u-opacity-70" wfd-invisible="true"></div>
+              </div>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+  </header>
+    <section class="u-clearfix u-grey-10 u-section-1" id="sec-ddc4">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <div class="u-container-style u-grey-10 u-group u-hidden-xs u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+
+            <div class="u-align-left u-container-style u-group u-hidden-md u-hidden-sm u-hidden-xs u-white u-group-2">
+              <div class="u-container-layout u-container-layout-2">
+                <p class="u-text u-text-default u-text-1">Hello</p>
+                <div ><img alt="profile" class="u-image u-image-circle u-preserve-proportions u-image-1" src="{% static 'images/fff.jpg' %}"/></div>
+                <p style="margin-left:75px;" class="u-custom-font u-text u-text-default u-text-2">{{user.first_name}}<span style="font-weight: 700;"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="u-container-style u-grey-10 u-group u-hidden-xs u-group-3">
+              <div class="u-container-layout u-container-layout-3">
+                <div class="u-container-style u-expanded-width u-group u-hidden-md u-hidden-sm u-hidden-xs u-white u-group-4">
+                  <div class="u-container-layout u-container-layout-4">
+                    <div ><img alt="profile" class="u-image u-image-circle u-preserve-proportions u-image-2" src="{% static 'images/personacc.png' %}"/></div>
+                    <h2 class="u-custom-font u-subtitle u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xs u-text-3">Account Setting</h2>
+                    <a href="{% url 'personalinfo' %}" data-page-id="57027834" class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-active-palette-2-base
+                     u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-active-palette-1-base u-text-body-color
+                      u-text-hover-palette-1-light-2 u-btn-1"  >Personal Information</a>
+
+                    <a href="{% url 'manageaddress' %}" class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs
+                    u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-active-palette-1-base
+                     u-text-body-color u-text-hover-palette-1-light-2 u-btn-2">Manage Addresses</a>
+
+
+                    <a href="{% url 'manageaddress' %}" class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs
+                    u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-active-palette-1-base
+                     u-text-body-color u-text-hover-palette-1-light-2 u-btn-2">Manage Addresses</a>
+
+                    <a href="{% url 'manageaddress' %}" class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs
+                    u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-active-palette-1-base
+                     u-text-body-color u-text-hover-palette-1-light-2 u-btn-2">Manage Addresses</a>
+
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {% block content %}
+        <div class="u-border-1 u-border-palette-1-base u-container-style u-group u-shape-rectangle u-white u-group-5">
+          <div class="u-container-layout u-container-layout-5" ></div>
+        </div>
+          {% endblock %}
+      </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<style> .u-dialog-section-10 {
+    min-height: 826px;
+    }
+    
+    .u-dialog-section-10 .u-dialog-1 {
+    width: 673px;
+    min-height: 501px;
+    background-image: none;
+    margin: 80px auto 60px;
+    }
+    
+    .u-dialog-section-10 .u-container-layout-1 {
+    padding: 0;
+    }
+    
+    .u-dialog-section-10 .u-form-1 {
+    height: 274px;
+    margin: 0 32px 0 244px;
+    }
+    
+    .u-dialog-section-10 .u-label-1 {
+    font-weight: 700;
+    }
+    
+    .u-dialog-section-10 .u-input-1 {
+    height: 40px;
+    }
+    
+    .u-dialog-section-10 .u-form-group-2 {
+    margin-left: 0;
+    }
+    
+    .u-dialog-section-10 .u-label-2 {
+    font-weight: 700;
+    }
+    
+    .u-dialog-section-10 .u-input-2 {
+    height: 40px;
+    }
+    
+    .u-dialog-section-10 .u-btn-1 {
+    background-image: none;
+    border-style: none;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    }
+    
+    .u-dialog-section-10 .u-btn-2 {
+    border-style: none none solid;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 57px 32px 0 auto;
+    padding: 0;
+    }
+    
+    .u-dialog-section-10 .u-btn-3 {
+    border-style: none none solid;
+    font-size: 1rem;
+    font-style: italic;
+    margin: -27px auto 0 238px;
+    padding: 0;
+    }
+    
+    .u-dialog-section-10 .u-group-1 {
+    width: 226px;
+    min-height: 496px;
+    height: auto;
+    margin: -416px auto 0 0;
+    }
+    
+    .u-dialog-section-10 .u-container-layout-2 {
+    padding: 30px 23px;
+    }
+    
+    .u-dialog-section-10 .u-text-1 {
+    margin: 0 81px 0 0;
+    }
+    
+    .u-dialog-section-10 .u-text-2 {
+    font-weight: 700;
+    margin: 49px 0 0;
+    }
+    
+    .u-dialog-section-10 .u-icon-1 {
+    width: 29px;
+    height: 29px;
+    left: auto;
+    top: 11px;
+    position: absolute;
+    right: 14px;
+    background-image: none;
+    padding: 10px;
+    }
+    
+    @media (max-width: 1199px) {
+    .u-dialog-section-10 .u-dialog-1 {
+    width: 673px;
+    height: auto;
+    }
+    
+    .u-dialog-section-10 .u-btn-3 {
+    margin-top: -27px;
+    margin-left: 238px;
+    }
+    
+    .u-dialog-section-10 .u-group-1 {
+    margin-top: -416px;
+    height: auto;
+    }
+    
+    .u-dialog-section-10 .u-text-1 {
+    margin-right: 81px;
+    }
+    }
+    
+    @media (max-width: 991px) {
+    .u-dialog-section-10 .u-container-layout-1 {
+    padding-top: 29px;
+    }
+    }
+    
+    @media (max-width: 767px) {
+    .u-dialog-section-10 .u-dialog-1 {
+    width: 540px;
+    }
+    
+    .u-dialog-section-10 .u-container-layout-1 {
+    padding-top: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+    }
+    
+    .u-dialog-section-10 .u-form-1 {
+    margin-right: 0;
+    margin-left: 143px;
+    }
+    
+    .u-dialog-section-10 .u-btn-2 {
+    margin-right: 0;
+    }
+    
+    .u-dialog-section-10 .u-btn-3 {
+    margin-left: 105px;
+    }
+    
+    .u-dialog-section-10 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    }
+    
+    @media (max-width: 575px) {
+    .u-dialog-section-10 .u-dialog-1 {
+    width: 340px;
+    }
+    
+    .u-dialog-section-10 .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+    
+    .u-dialog-section-10 .u-form-1 {
+    margin-left: 0;
+    }
+    
+    .u-dialog-section-10 .u-btn-3 {
+    margin-left: 0;
+    }
+    }</style>
+
+
+<section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-10" id="login_popup_id" >
+    <!-- data-dialog-show-on="page_exit" -->
+    <div class="u-border-2 u-border-white u-container-style u-dialog u-opacity u-opacity-90 u-radius-10 u-shape-round u-dialog-1">
+      <div class="u-container-layout u-valign-bottom u-container-layout-1">
+        <div class="u-align-center u-border-2 u-border-palette-5-light-3 u-form u-radius-10 u-form-1">
+            
+          <form action="{% url 'loginuser' %}" method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 26px;">
+            {% csrf_token %}
+            <div class="u-form-group u-label-top">
+              <label for="email" class="u-label u-label-1">Username:</label>
+              <input type="text" placeholder="Enter username" id="email" name="username" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-6 u-white u-input-1" required maxlength="100" autofocus="autofocus">
+            </div>
+            <div class="u-form-group u-label-top u-form-group-2">
+              <label for="password" class="u-label u-label-2">password:</label>
+              <input type="password" placeholder="Enter password here" id="password" name="password" class="u-border-2 u-border-grey-25 u-input u-input-rectangle u-radius-6 u-white u-input-2" required>
+            </div>
+            <div class="u-align-center u-form-group u-form-submit u-label-top">
+              <input type="submit" value="submit" >
+              <!-- <a href="" class="u-active-custom-color-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-2 u-palette-1-base u-radius-5 u-btn-1">Login</a> -->
+            </div>
+          </form>
+        </div>
+        <a href="{% url 'signup' %}" class="u-active-none u-border-2 u-border-active-custom-color-1 u-border-hover-palette-1-light-2 u-border-white u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-hover-custom-color-1 u-text-white u-btn-2">new to educart? create an account...</a>
+        <a href="#" class="u-active-none u-border-2 u-border-active-custom-color-1 u-border-hover-palette-1-light-2 u-border-white u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-hover-custom-color-1 u-text-white u-btn-3">Forgot password?</a>
+        <div class="u-container-style u-group u-palette-1-base u-radius-6 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-2">
+            <h3 class="u-align-left u-custom-font u-font-playfair-display u-text u-text-1">Login</h3>
+            <p class="u-align-center u-custom-font u-font-georgia u-text u-text-2">Get Access To Your Orders, Wishlist, And<br>Recommendation
+            </p>
+          </div>
+        </div>
+      </div><button class="u-dialog-close-button u-icon u-icon-rounded u-palette-1-base u-icon-1">
+      <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 409.806 409.806" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4e2d"></use></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 409.806 409.806" x="0px" y="0px" id="svg-4e2d" style="enable-background:new 0 0 409.806 409.806;"><g><g><path d="M228.929,205.01L404.596,29.343c6.78-6.548,6.968-17.352,0.42-24.132c-6.548-6.78-17.352-6.968-24.132-0.42    c-0.142,0.137-0.282,0.277-0.42,0.42L204.796,180.878L29.129,5.21c-6.78-6.548-17.584-6.36-24.132,0.42    c-6.388,6.614-6.388,17.099,0,23.713L180.664,205.01L4.997,380.677c-6.663,6.664-6.663,17.468,0,24.132    c6.664,6.662,17.468,6.662,24.132,0l175.667-175.667l175.667,175.667c6.78,6.548,17.584,6.36,24.132-0.42    c6.387-6.614,6.387-17.099,0-23.712L228.929,205.01z"></path>
+  </g>
+  </g></svg>
+    </button>
+    </div>
+  </section>
+  
